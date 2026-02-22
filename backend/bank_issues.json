@@ -1,0 +1,241 @@
+[
+  {
+    "issue_id": "NEFT-002",
+    "system": "NEFT",
+    "category": "Transaction",
+    "status_codes": ["T"],
+    "issue_title": "NEFT transaction stuck in T status",
+    "symptoms": [
+      "Transaction showing T status",
+      "No final confirmation from SFMS"
+    ],
+    "root_cause": "NEFT transaction pending due to SFMS response handling or message error",
+    "resolution_steps": [
+      "Check SFMS response for the transaction using sender reference number",
+      "Run query on tbaadm.smh table to verify message response",
+      "If AM04 received with error message, inform Finance team and do not reprocess",
+      "If all AM04 and C59 messages are received, do not reprocess as transaction is end-to-end processed",
+      "Wait for system to update final status or EOD processing"
+    ],
+    "reference_queries": {
+      "SFMS_Response_Check": "select * from tbaadm.smh where sender_ref_num='<SENDER_REF_NO>' and execution_date='<DD-MM-YYYY>';"
+    },
+    "escalation": true
+  },
+  {
+    "issue_id": "RTGS-002",
+    "system": "RTGS",
+    "category": "Transaction",
+    "status_codes": ["T"],
+    "issue_title": "RTGS transaction stuck in T status",
+    "symptoms": [
+      "RTGS transaction pending",
+      "Transaction not marked as P in CBS"
+    ],
+    "root_cause": "Incomplete or delayed SFMS response marking transaction status",
+    "resolution_steps": [
+      "Check SFMS response for the RTGS transaction using UTR or reference number",
+      "Verify messages received in tbaadm.smh table",
+      "If 3 R90 and 1 R43 messages are received, transaction is end-to-end processed",
+      "If all R90 messages are not received, confirm transaction status with SFMS team",
+      "Do not reprocess without SFMS confirmation"
+    ],
+    "reference_queries": {
+      "RTGS_SFMS_Check": "select mt_no, utr, execution_date, in_out_ind, status, swift_msg, rcre_time from tbaadm.smh where swift_msg like '%<REF_NO>%' and execution_date='<DD-MM-YYYY>';"
+    },
+    "escalation": true
+  },
+  {
+    "issue_id": "FIN-002",
+    "system": "Finacle",
+    "category": "CIF",
+    "issue_title": "Finacle shows CIFID is invalid",
+    "symptoms": [
+      "CIF invalid in Finacle",
+      "Unable to proceed with CIF operations"
+    ],
+    "root_cause": "CIF may be suspended at CBS level",
+    "resolution_steps": [
+      "Identify whether CIF is Retail or Corporate",
+      "Run suspension check query",
+      "Get OPS-HOD approval",
+      "CBS team to unsuspend CIF",
+      "Update KYC date and KYC review date"
+    ],
+    "reference_queries": {
+      "Retail_CIF": "select suspended, SUSPEND_REASON, corp_id, orgkey from crmuser.accounts where orgkey in ('<CIF_ID>');",
+      "Corporate_CIF": "select SUSPEND_FLAG, SUSPEND_REASON, corp_id from CRMUSER.CORPORATE where corp_id = '<CIF_ID>';"
+    },
+    "escalation": true
+  },
+  {
+    "issue_id": "FIN-006",
+    "system": "Finacle",
+    "category": "CIF",
+    "issue_titles": [
+      "Manual LAN issue",
+      "KYC not updated for this CIF",
+      "Invalid CIF ID error",
+      "KYC issue"
+    ],
+    "symptoms": [
+      "KYC NOT Updated",
+      "Invalid CIFID"
+    ],
+    "root_cause": "Might be KYC Not Updated for this CIFID, Need to check from Backend",
+    "resolution_steps": [
+      "If the CIFID is not Updated from CBS then follow below steps",
+      "Open Finacle and use CIOKU Menu Option",
+      "Enter CIFID",
+      "Then Update the KYC Date and other things need to be Updated",
+      "Check from Backend",
+      "If the KYC has been Updated Successfully then ask the user to check now"
+    ],
+    "reference_queries": {
+      "Retail_CIF": "select orgkey, kyc_date, kyc_review_date, occupation from crmuser.accounts where orgkey in ('<CIF_ID>');",
+      "Corporate_CIF": "select orgkey, kyc_date, kyc_review_date, occupation from CRMUSER.CORPORATE where corp_id = '<CIF_ID>';"
+    },
+    "escalation": true
+  },
+  {
+    "issue_id": "FIN-008",
+    "system": "SDK",
+    "category": "SDK",
+    "issue_title": "Account not open through SDK",
+    "symptoms": [
+      "Account number generated but not showing in Application"
+    ],
+  "root_cause": "Might be Account Number is generated but not synced with SDK application.",
+
+    "resolution_steps": [
+      "Login SDK server via BeyondTrust",
+      "Connect to server IP 192.168.54.112",
+      "Check SDK backend logs",
+      "Check account status",
+      "Note -> AO_APP_Prod:- This table contains data related to customer onboarding, including Pan Number,Mobile Number,CIF, Account Number, and Aadhaar Number."
+
+    ],
+    "reference_queries": {
+      "AO_APP_PROD": "select * from CustomerApplicationRequests",
+      "AO_APP_PROD.": "select * from CustomerApplicationRequests nolock where CustomerApplicatiNumber = 'P6/AG231/9839/010126123212_1'"
+    },
+    "escalation": true
+    },
+
+    {
+      "issue_id": "FIN-010",
+      "system": "SDK",
+      "category": "SDK",
+      "issue_title": "REKYC Not Done By SDK",
+      "symptoms": [
+        "Might be REKYC Updated by not reflecting in CBS"
+      ],
+    "root_cause": "Might be REKYC Failed for any reason, Need to check the logs from backend.",
+  
+      "resolution_steps": [
+        "Login SDK server via BeyondTrust",
+        "Connect to server IP :- 192.168.54.112",
+        "Check SDK backend logs",
+        "For assistance, you can include the CIF ID, mobile number, or any other available details in the request JSON.",
+        "You may use the following reference queries (read-only) for assistance.",
+        "Note -> AO_Logs_Prod:- This table specifically contains SDK logs. It tracks the logs for partner APIs. Any errors or responses from the SDK are captured here.",
+        "Note -> AO_MW_Logs_Prod:- This table stores logs related to middleware. If the issue is related to middleware, we can find the relevant logs in this table."
+
+      ],
+      "reference_queries": {
+        "AO_Logs_PROD": "Select * from remotelogs OR Select * from MbActivityLogs",
+        "AO_Logs_PROD.": "Select * from remotelogs where RequestJSON like ‘%835760%’ and startDate between ‘2025-01-09 09:00:00' and ‘2025-01-09 09:05:00’ ",
+        "AO_Logs_PROD..": "Select * from MbActivityLogs where RequestJSON like ‘%835760%’ and startDate between ‘2025-01-09 09:00:00' and ‘2025-01-09 09:05:00’ "
+
+      },
+      "escalation": true
+    },
+
+    
+    {
+      "issue_id": "FIN-011",
+      "system": "Compass AML",
+      "category": "SDK",
+      "issue_titles": [
+        "Compass ID Creation",
+        "How to create Compass ID Creation",
+        "AML ID Creation",
+        "AML (Compass) ID Creation"
+      ],
+      
+      "symptoms": [
+        "It is process to create Compass ID Creation"
+      ],
+    "root_cause": "The Compass Application is a robust Anti-Money Laundering (AML) solution designed to detect and prevent illicit financial activities. It plays a critical role in ensuring compliance with regulatory standards by monitoring, identifying, and reporting suspicious transactions and users.",
+  
+      "resolution_steps": [
+        "Open the Compass Application URL in your browser using below link: ",
+        "URL - https://amlalm.shivalikbank.com/Compass/login ",
+        "Enter the username and password provided by the bank.",
+        "Two types of IDs are created during this process: 1. Maker ID: Used for creating new user IDs. 2. Checker ID: Used for verifying and approving the IDs created by the Maker.",
+        "Create a User (Maker) --> 1. Navigate to the Create User section in the portal. 2. Fill in the required user details as mentioned in the ticket/request. Ensure all fields are completed accurately.",
+        "Note ->  Special Approval Rules:- If the request comes from a Branch Head or BOM (Branch Operations Manager):-Create the ID directly without seeking additional approval. By default Department Code is ALL-ALL. Ldap UserCode will be the part of their email before @ symbol. Example – ashrivastav1@shivalikbank.com so we can fill the start name of the email in Ldap UserCode like ashrivastav1.",
+        "Note -> If the request comes from HO :- Create the ID directly without seeking additional approval, Role will be mentioned in the request.",
+        "Note -> For other requests:- Obtain approval from the Cluster Head before proceeding.",
+        "After filling the Details click on create User.",
+        "Group Mapping --> 1. After creating the user ID, proceed to the Group Mapping section. 2. Enter the user’s ID in the designated field. 3. Click on the Search option to locate the user’s profile.",
+        "Map the user to the appropriate group based on their role and access requirements.",
+        "Note :-  This process is conducted to assign roles to users within the Compass Application, ensuring they have appropriate access for their responsibilities such as",
+        "For  Branch IDs:- Roles are assigned as the Branch User.",
+        "For Head Office (HO) IDs:- Assign the following roles whichever is mentioned out of following. 1. Screening Maker 2. Screening Checker 3. AML User.",
+        "If it is not mentioned then you can these details for futher action :- Emp_Code, Employee Name, E-mail ID, Functional Designation , Branch Code & Name (Location) , Role in Compass.",
+        "After assigning the role, a notification will come in green color Your id has been created, the maker's work is finished here.",
+        "Verification by Checker --> 1. Log in with the Checker ID (provided by the bank). 2. Checker ID is used for verifying and approving user profiles. 3. Navigate to the Approve User section. 4. Enter the user ID created by the Maker in the search field. 4. Click Search to locate the profile. 5. Review the user details that appear on the screen. 6. We can give the remark according to the user but as per bank suggetions we can fill “Approved” in the remark section.",
+        "Verify the accuracy of the information entered by the Maker. Ensure the assigned roles and group mapping align with the request. Fill in the remarks field with 'Approved' or an appropriate comment.  Click Approve to finalize the creation process.",
+        "If all the details are correct then verify the details and approve it. If there is any mistake in it then you can reject it and maker can recreate the ID . Once the ID is created and verified notify the user by stating.",
+        "Your ID has been created, and your password will be the same as your system password, Exaple :- User Id : bh.muzaffarnagar"
+
+      ],
+      
+  "step_assets": {
+    "2": [
+      "/assets/compass/image1.png"
+    ],
+    "5": [
+      "/assets/compass/image2.png"
+    ],
+    "9": [
+      "/assets/compass/image3.jpeg"
+    ],
+    "10": [
+      "/assets/compass/image4.jpeg"
+    ],
+    "14": [
+      "/assets/compass/image5.png"
+    ],
+    "17": [
+      "/assets/compass/image6.png"
+    ],
+    "18": [
+      "/assets/compass/image7.png"
+    ]
+  },
+      "reference_queries": {
+        "Compass_URL": "https://amlalm.shivalikbank.com/Compass/login"
+      },
+      "escalation": true
+    },
+ 
+    {
+      "issue_id": "NEFT-012",
+      "system": "Finacle",
+      "category": "Finacle",
+      "status_codes": ["Finacle"],
+      "issue_title": "Finacle ID Unlock",
+      "symptoms": [
+        "Finacle ID is locked, need to unlocked"
+      ],
+      "root_cause": "User Finacle ID is locked, need to unlock the ID and ask to check now",
+      "resolution_steps": [
+        "Login Finacle",
+        "Go to SSOAdmin and then Unlock the ID."
+      ],
+      "escalation": true 
+    }
+    
+]

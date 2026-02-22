@@ -1,0 +1,244 @@
+/* -------- Global -------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #eef2f7, #f8fafc);
+  color: #1f2937;
+}
+
+/* -------- Container -------- */
+.container {
+  max-width: 880px;
+  margin: 60px auto;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* -------- Heading -------- */
+.container h1 {
+  margin-bottom: 24px;
+  font-size: 26px;
+  font-weight: 600;
+  color: #0f172a;
+  text-align: center;
+}
+
+/* -------- Query Box -------- */
+.query-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.query-box textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 14px 16px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  resize: vertical;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.query-box textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* -------- Button -------- */
+button {
+  align-self: flex-end;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* -------- Response Card -------- */
+.response-card {
+  margin-top: 32px;
+  background: #f9fafb;
+  border-left: 5px solid #2563eb;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* -------- Sections -------- */
+.response-card h3 {
+  margin: 16px 0 6px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+.response-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+/* -------- Steps -------- */
+.response-card ol {
+  margin: 10px 0 0 18px;
+  padding: 0;
+}
+
+.response-card li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* -------- Escalation Badge -------- */
+.response-card p:last-child {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.response-card p:last-child::before {
+  content: "⚠ ";
+}
+
+/* -------- Mobile -------- */
+@media (max-width: 640px) {
+  .container {
+    margin: 20px;
+    padding: 24px;
+  }
+
+  button {
+    width: 100%;
+    align-self: stretch;
+  }
+}
+
+
+.query-block {
+  margin-top: 10px;
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 14px;
+  border-radius: 8px;
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  overflow-x: auto;
+}
+
+.query-block strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #93c5fd;
+}
+
+.query-block pre {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* -------- Actions -------- */
+.action-buttons {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+}
+
+.success-btn {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+}
+
+.danger-btn {
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+}
+
+textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+/* -------- Ticket -------- */
+.ticket-box {
+  margin-top: 20px;
+  background: #ecfeff;
+  padding: 16px;
+  border-radius: 10px;
+  border-left: 4px solid #0ea5e9;
+}
+.action-buttons {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+}
+
+.success-btn {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+}
+
+.danger-btn {
+  background: linear-gradient(135deg, #dc2626, #991b1b);    
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 28px;
+}
+
+.logo {
+  height: 110px;
+  width: auto;
+}
+
+.step-images {
+  margin-top: 10px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.step-images img {
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+ 
+.step-link {
+  color: #2563eb;
+  font-weight: 500;
+  text-decoration: underline;
+  word-break: break-all;
+}
+ 
+.step-link:hover {
+  color: #1e40af;
+}
