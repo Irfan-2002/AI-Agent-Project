@@ -22,10 +22,10 @@ Frontend is built using **React (Vite)** and connected to a **FastAPI backend** 
 ## 🌐 Live Deployment
 
 **Frontend:**  
-https://ai-agent-project-1-kq4v.onrender.com  
+https://ai-agent-project-frontend-eqfy.onrender.com
 
 **Backend API:**  
-https://ai-agent-project-he7a.onrender.com  
+https://ai-agent-project-75gy.onrender.com 
 
 ---
 
