@@ -477,7 +477,8 @@
         "(TAR File Name - cdciDailyPreEODfolderCreation_safe_1.sh)",
         "Path for TAR Ceation - cd /opt/shivalik then l",
         "You can refer below Screenshot before TAR Creation (Before running TAR)",
-        "When the TAR is completed- it will be displayed as shown in below screenshots."
+        "When the TAR is completed- it will be displayed as shown in below screenshots.",
+        "The TAR process will take approximately 40–45 minutes to complete."
       ],
  
       "step_assets": {
