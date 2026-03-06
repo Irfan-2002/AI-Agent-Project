@@ -18,7 +18,7 @@ export default function ResponseCard({ response }) {
   const assets = response.step_assets || {};
  
   const escalateIssue = async () => {
-    const res = await fetch("https://ai-agent-project-he7a.onrender.com/escalate", {
+    const res = await fetch("https://ai-agent-project-75gy.onrender.com/escalate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
