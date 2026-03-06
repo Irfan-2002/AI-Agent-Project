@@ -169,7 +169,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "https://ai-agent-project-1-kq4v.onrender.com"],
+    allow_origins=["http://localhost:5173", "https://ai-agent-project-frontend-eqfy.onrender.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
