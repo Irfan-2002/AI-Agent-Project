@@ -111,8 +111,10 @@
       "Login SDK server via BeyondTrust",
       "Connect to server IP 192.168.54.112",
       "Check SDK backend logs",
-      "Check account status",
-      "Note -> AO_APP_Prod:- This table contains data related to customer onboarding, including Pan Number,Mobile Number,CIF, Account Number, and Aadhaar Number."
+      "Check CIF and Account status from backend",
+      "If the status showing pending at AML End then we need to ask AML Team to share the status at their end, when AML Team Approved the status after that CIFID and Account Number will be created Automatically.",
+      "Note -> AO_APP_Prod:- This table contains data related to customer onboarding, including Pan Number,Mobile Number,CIF, Account Number, and Aadhaar Number.",
+      "We can refer below mentioned Queris -"
 
     ],
     "reference_queries": {
