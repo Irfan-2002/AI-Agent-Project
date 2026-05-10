@@ -239,7 +239,7 @@
     },
 
         {
-          
+
       "issue_id": "NEFT-013",
       "system": "Finacle",
       "category": "Finacle",
@@ -256,6 +256,7 @@
         "Check from backend, after few minutes transaction got processed"
       ],
       "escalation": true 
+      
     }
     
 ]
