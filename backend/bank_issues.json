@@ -236,6 +236,25 @@
         "Go to SSOAdmin and then Unlock the ID."
       ],
       "escalation": true 
+    },
+
+        {
+      "issue_id": "NEFT-013",
+      "system": "Finacle",
+      "category": "Finacle",
+      "status_codes": ["Finacle"],
+      "issue_title": "NEFT R status stuck during EOD-SOD",
+      "symptoms": [
+        "NEFT Transaction stuck in R status during EOD-SOD"
+      ],
+      "root_cause": "After servise down, NEFT Transaction goes into R status and we need to reprocess the transation after SOD received",
+      "resolution_steps": [
+        "Login Finacle",
+        "Go to CSUM Menu and go to 'NEFT-RTGS R status stuck in EOD-SOD' and then go",
+        "Enter Execution Date and UTR and then submit",
+        "Check from backend, after few minutes transaction got processed"
+      ],
+      "escalation": true 
     }
     
 ]
