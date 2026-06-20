@@ -499,6 +499,48 @@
         ]
       },
       "escalation": true
+    },
+
+     {
+      "issue_id": "BALM-024",
+      "system": "CBS",
+      "category": "PAM",
+      "status_codes": ["PAM-Putty"],
+      "issue_title": "BALM Report Extract via backend",
+      "symptoms": [
+        "It is a simple process of TAR Creation, TAR should be completed Everyday as per Pre EOD."
+      ],
+      "root_cause": "TAR Creation is process for Daily Backup Data.",
+      "resolution_steps": [
+        "Login PAM Application(Arcon).",
+        "Login into Arcon with Username- MdAbrar.K and the server will be 10.21.20.21 .",
+        "Follow the commands as per below given screenshot.",
+        "Path for Finadm space % -  cd /opt/shivalik/log then df.",
+        "Note -> The percentage shouldn’t be greater than 90% ",
+        "Path for TAR Sapce - cd /opt/shivalik/log then du -sh.",
+        "(TAR File Name - cdciDailyPreEODfolderCreation_safe_1.sh)",
+        "Path for TAR Ceation - cd /opt/shivalik then l",
+        "You can refer below Screenshot before TAR Creation (Before running TAR)",
+        "When the TAR is completed- it will be displayed as shown in below screenshots.",
+        "The TAR process will take approximately 40–45 minutes to complete."
+      ],
+ 
+      "step_assets": {
+ 
+        "4": [
+          "/assets/BALM/BALM1.png"
+        ],
+        "6": [
+          "/assets/TAR/TAR2.png"
+        ],
+        "9": [
+          "/assets/TAR/TAR3.png"
+        ],
+        "10": [
+          "/assets/TAR/TAR4.png"
+        ]
+      },
+      "escalation": true
     }
     
 ]
