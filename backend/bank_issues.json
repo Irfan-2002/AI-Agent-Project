@@ -516,27 +516,33 @@
         "Login into Arcon with Username- bbssl1 and the server will be 10.21.20.21 .",
         "we need to go on path cd /opt/shivalik/ashihs/BALM and then l",
         "You will see all the BALM Files that need to be execute, refer below attachment, files might be changed according to need ",
-        "Path for TAR Sapce - cd /opt/shivalik/log then du -sh.",
-        "(TAR File Name - cdciDailyPreEODfolderCreation_safe_1.sh)",
-        "Path for TAR Ceation - cd /opt/shivalik then l",
-        "You can refer below Screenshot before TAR Creation (Before running TAR)",
-        "When the TAR is completed- it will be displayed as shown in below screenshots.",
-        "The TAR process will take approximately 40–50 minutes to completed."
+        "Use below steps to extract above files one by one: ",
+        "When you are done with executing above mentioned files one by one, kindly follow below process: ",
+        "mkdir 20062026 and press Enter",
+        " mv *.txt *.TXT 20062026 and press Enter",
+        "Count .TXT number of files should be equal to to 24.refre below attachment",
+        " If yes , create tar using command –>  tar –czvf 20062026.tar.gz 20062026 and press Enter and Wait for TAR end..",
+        "Login to Jump server 192.168.54.112 | JUMPSRV_FINDB pam_maintenance2.",
+        "Login server 10.21.20.21 using ARCON on server and connect SFTP.",
+        "Follow the path as per mentioned below in Local Dir and Remote Dir and drag the tar.gz file from Remote Dir to Local Dir as shown in below screenshot."
       ],
  
       "step_assets": {
  
         "4": [
-          "/assets/BALM/BALM2.png"
-        ],
-        "6": [
           "/assets/BALM/BALM1.png"
+        ],
+        "5": [
+          "/assets/BALM/BALM.2.png"
         ],
         "9": [
-          "/assets/BALM/BALM1.png"
+          "/assets/BALM/BALM3.png"
         ],
-        "10": [
-          "/assets/BALM/BALM1.png"
+        "11": [
+          "/assets/BALM/BALM4.png"
+        ],
+          "13": [
+          "/assets/BALM/BALM5.png"
         ]
       },
       "escalation": true
