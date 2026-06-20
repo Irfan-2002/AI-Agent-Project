@@ -503,20 +503,19 @@
 
      {
       "issue_id": "BALM-024",
-      "system": "CBS",
+      "system": "Backend",
       "category": "PAM",
       "status_codes": ["PAM-Putty"],
-      "issue_title": "BALM Report Extract via backend",
+      "issue_title": "BALM Report Extraction via backend",
       "symptoms": [
-        "It is a simple process of TAR Creation, TAR should be completed Everyday as per Pre EOD."
+        "This is part of EOD, Aftre EOD we need to extract BALM File via backend, mostly 24 File we have to execute on daily basis."
       ],
-      "root_cause": "TAR Creation is process for Daily Backup Data.",
+      "root_cause": "This is part of EOD, Aftre EOD we need to extract BALM File via backend, mostly 24 File we have to execute on daily basis.",
       "resolution_steps": [
         "Login PAM Application(Arcon).",
-        "Login into Arcon with Username- MdAbrar.K and the server will be 10.21.20.21 .",
-        "Follow the commands as per below given screenshot.",
-        "Path for Finadm space % -  cd /opt/shivalik/log then df.",
-        "Note -> The percentage shouldn’t be greater than 90% ",
+        "Login into Arcon with Username- bbssl1 and the server will be 10.21.20.21 .",
+        "we need to go on path cd /opt/shivalik/ashihs/BALM and then l",
+        "You will see all the BALM Files that need to be execute, refer below attachment, files might be changed according to need ",
         "Path for TAR Sapce - cd /opt/shivalik/log then du -sh.",
         "(TAR File Name - cdciDailyPreEODfolderCreation_safe_1.sh)",
         "Path for TAR Ceation - cd /opt/shivalik then l",
@@ -528,7 +527,7 @@
       "step_assets": {
  
         "4": [
-          "/assets/BALM/BALM1.png"
+          "/assets/BALM/BALM2.png"
         ],
         "6": [
           "/assets/BALM/BALM1.png"
