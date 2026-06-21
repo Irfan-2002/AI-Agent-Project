@@ -553,10 +553,11 @@
       "system": "LOS",
       "category": "LOS Application",
       "status_codes": ["LOS-Application"],
-      "issue_title": [
+      "issue_titles": [
         "LOS ID Creation",
         "How to create LOS ID."
       ],
+  
       "symptoms": [
         "It is a simple process of LOS ID Creation as per branch request, Need HOD Approval for LOS ID Creation."
       ],
