@@ -554,8 +554,7 @@
       "category": "LOS Application",
       "status_codes": ["LOS-Application"],
       "issue_title": [
-        "LOS ID Creation",
-        "How to create LOS ID."
+        "LOS ID Creation"
       ],
       "symptoms": [
         "It is a simple process of LOS ID Creation as per branch request, Need HOD Approval for LOS ID Creation."
