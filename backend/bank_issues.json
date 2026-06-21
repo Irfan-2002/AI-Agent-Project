@@ -657,6 +657,80 @@
 
       },
       "escalation": true
+    },
+
+    {
+      "issue_id": "MMS_FILES-027",
+      "system": "Putty-CBS",
+      "category": "MMS File Transfer",
+      "status_codes": ["MMS File Transfer"],
+      "issue_titles": [
+        "MMS File Transfer",
+        "How to transfer MMS File using SFTP server."
+      ],
+  
+      "symptoms": [
+        "It is a simple process of Transfer MMS File as per user request."
+      ],
+      "root_cause": "The purpose of this document is to provide a detailed, step-by-step guide for updating and transferring the MMS file using the Arcon Secure File Transfer (SFTP) platform. It ensures that users follow a standardized process for accessing, extracting, updating, and moving MMS files securely and accurately.",
+      "resolution_steps": [
+        "This document applies to the personnel involved in the management and handling of MMS file transfers, particularly those responsible for accessing Arcon, processing files under the NACH_UPLOAD path, and ensuring proper file permissions and folder structure for further processing.",
+        "The MMS (Mandate Management System) file handling process involves securely downloading, extracting, and placing mandate-related files using the Arcon SFTP environment. This document outlines the steps to navigate the file system, manage permissions, and ensure correct placement of files to maintain operational integrity and audit compliance.",
+        "First, log in to Arcon at IP: 10.21.20.21. Then go to Arcos and select the first option: Secure File Transfer (SFTP).",
+        " Click on Connect → Prompt_User → Add Credentials.",
+        "Add the new path: /opt.",
+        "Navigate to the Shivalik folder, then open CDCI_LOGS.",
+        "Go to the NACH_UPLOAD folder and double-click on it.",
+        "You can also direct access the path -- /opt/shivalik/CDCI_LOGS/NACH_UPLOAD.",
+        "Check your mail for notifications. You will receive emails containing files that need to be downloaded. (Sunil/ Ashish/Nagesh/Akshay.)",
+        "Create a new folder and add the downloaded file into it to extract the data.",
+        "Note -- If all files are extracted successfully here, you will need to create a folder with the same name and move the extracted files into it.",
+        "Click on the three dots, navigate to the MMS file folder, and click OK. The files will then appear in the folder.",
+        "For Transferring and Setting Permissions -- Drag the folder to the other panel (side) in the SFTP interface.",
+        "After dragging, right-click the folder, go to Properties, and set the permission as 777.",
+        "Open the specific folder again, select the files (use Shift + Arrow Down to select all), go to Properties, and set the permission to 777.",
+        "Reply via email once the file has been placed."
+      ],
+ 
+      "step_assets": {
+        "3": [
+          "/assets/MMS/MMS1.png",
+          "/assets/MMS/MMS2.png"
+        ],
+        "4": [
+          "/assets/MMS/MMS3.png"
+        ],
+        "5": [
+          "/assets/MMS/MMS4.png"
+        ],
+         "6": [
+          "/assets/MMS/MMS5.png"
+        ],
+        "7": [
+          "/assets/MMS/MMS6.png"
+        ],
+        "8": [
+          "/assets/MMS/MMS7.png"
+        ],
+        "10": [
+          "/assets/MMS/MMS8.png"
+        ],
+        "12": [
+          "/assets/MMS/MMS9.png",
+          "/assets/MMS/MMS10.png"
+        ],
+        "13": [
+          "/assets/MMS/MMS11.png"
+        ],
+        "14": [
+          "/assets/MMS/MMS12.png"
+        ],
+        "15": [
+          "/assets/MMS/MMS13.png"
+        ]
+
+      },
+      "escalation": true
     }
 
     
