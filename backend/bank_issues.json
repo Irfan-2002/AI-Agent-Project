@@ -586,6 +586,77 @@
         ]
       },
       "escalation": true
+    },
+
+    {
+      "issue_id": "Account statement-026",
+      "system": "CBS",
+      "category": "Account Statement",
+      "status_codes": ["Account-Statement"],
+      "issue_titles": [
+        "Account Statement Generation",
+        "How to generate Account Statement via Finacle"
+      ],
+  
+      "symptoms": [
+        "It is a simple process of Account Statement generation via Finacle as per branch request."
+      ],
+      "root_cause": "The purpose of this document is to define the standardized process for extracting account statements through Finacle, using menu options HPSP and CPSP, ensuring consistent and accurate delivery of account statements to the bank team in the required format. ",
+      "resolution_steps": [
+        "This document explains the process of extracting account statements from Finacle in response to requests by the bank team. Depending on the account type and its opening date, the statement can be extracted using two menu options: ",
+        "HPSP (for accounts opened after migration- Pass Sheet Print).",
+        "CPSP (for accounts opened before migration- CUSTOM MENU OF ACCOUNT STATEMENT BRANCH & ACCOUNT TRANSACTION INQUIRY).",
+        "First, check in the gam table when the account was opened using the following query:-- Select * from tbaadm.gam where foracid=’Account number’;",
+        "Login to Finacle and go to the menu option CPSP.",
+        "Enter the account number as shown in the screenshot. Fill in From A/c ID and To A/c ID.",
+        "Change the SOL ID as required.",
+        "Set Period From as the account opening date Then submit.",
+        "After that, Go to the menu option HPR and Do not enter any data; simply click GO.",
+        "Mark the checkbox and take a screenshot of the results.",
+        "If the account opening date is before 2019, use the CPSP menu option. Initially, always try the HPSP menu option first. If any error occurs or if the bank team reports missing accounts after receiving the statement, use the CPSP option as an alternative.",
+        "Enter the account number -->> Set From Date as the opening date retrieved from the gam table and Set To Date as an earlier date and Use the CPSP menu and click GO.",
+        "On the next page, select Print.",
+        "If an error occurs, break the date range into smaller parts.",
+        "Example:-- 1.Opening date: 18.04.2015,2.End date: 18.04.2016 and This helps prevent the error.",
+        "Once the error is resolved, the process will automatically proceed to the HPR page. Finally, print and save the statement."
+      ],
+ 
+      "step_assets": {
+        "4": [
+          "/assets/Account_Statement/Acct_stmt1.png",
+          "/assets/Account_Statement/Acct_stmt2.png"
+        ],
+        "5": [
+          "/assets/Account_Statement/Acct_stmt3.png"
+        ],
+        "6": [
+          "/assets/Account_Statement/Acct_stmt4.png"
+        ],
+         "7": [
+          "/assets/Account_Statement/Acct_stmt5.png"
+        ],
+        "8": [
+          "/assets/Account_Statement/Acct_stmt6.png",
+          "/assets/Account_Statement/Acct_stmt7.png"
+        ],
+        "9": [
+          "/assets/Account_Statement/Acct_stmt8.png"
+        ],
+        "10": [
+          "/assets/Account_Statement/Acct_stmt9.png"
+        ],
+        "12": [
+          "/assets/Account_Statement/Acct_stmt10.png"
+        ],
+        "13": [
+          "/assets/Account_Statement/Acct_stmt11.png"
+        ],
+        "15": [
+          "/assets/Account_Statement/Acct_stmt12.png"
+        ]
+
+      },
+      "escalation": true
     }
 
     
