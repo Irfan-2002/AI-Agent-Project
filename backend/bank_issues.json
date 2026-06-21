@@ -689,7 +689,7 @@
         "For Transferring and Setting Permissions -- Drag the folder to the other panel (side) in the SFTP interface.",
         "After dragging, right-click the folder, go to Properties, and set the permission as 777.",
         "Open the specific folder again, select the files (use Shift + Arrow Down to select all), go to Properties, and set the permission to 777.",
-        "Reply via email once the file has been placed."
+        "Reply via email once the file has been successfully placed."
       ],
  
       "step_assets": {
