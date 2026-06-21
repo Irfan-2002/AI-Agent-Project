@@ -503,26 +503,28 @@
 
      {
       "issue_id": "BALM-024",
-      "system": "CBS",
+      "system": "Backend",
       "category": "PAM",
       "status_codes": ["PAM-Putty"],
-      "issue_title": "BALM Report Extract via backend",
+      "issue_title": "BALM Report Extraction via backend",
       "symptoms": [
-        "It is a simple process of TAR Creation, TAR should be completed Everyday as per Pre EOD."
+        "This is part of EOD, Aftre EOD we need to extract BALM File via backend, mostly 24 File we have to execute on daily basis."
       ],
-      "root_cause": "TAR Creation is process for Daily Backup Data.",
+      "root_cause": "This is part of EOD, Aftre EOD we need to extract BALM File via backend, mostly 24 File we have to execute on daily basis.",
       "resolution_steps": [
         "Login PAM Application(Arcon).",
-        "Login into Arcon with Username- MdAbrar.K and the server will be 10.21.20.21 .",
-        "Follow the commands as per below given screenshot.",
-        "Path for Finadm space % -  cd /opt/shivalik/log then df.",
-        "Note -> The percentage shouldn’t be greater than 90% ",
-        "Path for TAR Sapce - cd /opt/shivalik/log then du -sh.",
-        "(TAR File Name - cdciDailyPreEODfolderCreation_safe_1.sh)",
-        "Path for TAR Ceation - cd /opt/shivalik then l",
-        "You can refer below Screenshot before TAR Creation (Before running TAR)",
-        "When the TAR is completed- it will be displayed as shown in below screenshots.",
-        "The TAR process will take approximately 40–50 minutes to completed."
+        "Login into Arcon with Username- bbssl1 and the server will be 10.21.20.21 .",
+        "we need to go on path cd /opt/shivalik/ashihs/BALM and then l",
+        "You will see all the BALM Files that need to be execute, refer below attachment, files might be changed according to need ",
+        "Use below steps to extract above files one by one: ",
+        "When you are done with executing above mentioned files one by one, kindly follow below process: ",
+        "mkdir 20062026 and press Enter",
+        " mv *.txt *.TXT 20062026 and press Enter",
+        "Count .TXT number of files should be equal to to 24.refre below attachment",
+        " If yes , create tar using command –>  tar –czvf 20062026.tar.gz 20062026 and press Enter and Wait for TAR end..",
+        "Login to Jump server 192.168.54.112 | JUMPSRV_FINDB pam_maintenance2.",
+        "Login server 10.21.20.21 using ARCON on server and connect SFTP.",
+        "Follow the path as per mentioned below in Local Dir and Remote Dir and drag the tar.gz file from Remote Dir to Local Dir as shown in below screenshot."
       ],
  
       "step_assets": {
@@ -530,14 +532,57 @@
         "4": [
           "/assets/BALM/BALM1.png"
         ],
-        "6": [
-          "/assets/BALM/BALM1.png"
+        "5": [
+          "/assets/BALM/BALM.2.png"
         ],
         "9": [
-          "/assets/BALM/BALM1.png"
+          "/assets/BALM/BALM3.png"
         ],
-        "10": [
-          "/assets/BALM/BALM1.png"
+        "11": [
+          "/assets/BALM/BALM4.png"
+        ],
+          "13": [
+          "/assets/BALM/BALM5.png"
+        ]
+      },
+      "escalation": true
+    },
+
+     {
+      "issue_id": "LOS-025",
+      "system": "LOS",
+      "category": "LOS Application",
+      "status_codes": ["LOS-Application"],
+      "issue_titles": [
+        "LOS ID Creation",
+        "How to create LOS ID."
+      ],
+  
+      "symptoms": [
+        "It is a simple process of LOS ID Creation as per branch request, Need HOD Approval for LOS ID Creation."
+      ],
+      "root_cause": "The Loan Origination System (LOS) is a comprehensive process used by banks to manage loan applications. When a customer requests a loan, the process is initiated through the LOS portal. Each loan application is assigned a unique LOS ID, which serves as a reference number throughout the loan process. This system tracks the entire journey of the loan, from the initial request to the final sanctioning of the loan.  We need to create LOS ID for the user as per branch request, Need HOD Approval for LOS ID Creation.",
+      "resolution_steps": [
+        "First we need to ask the details for LOS ID Creation if not shared by brach user - Employee Name, Employee Code, E-mail ID, Mobile Number, Branch/Branches, Department and Designation",
+        "Login Application from your ID and below mentioned attachment will come.",
+        "After Login into LOS Application from your ID and click on User detail as per below attachment.",
+        "go to User Details and Fill all the mandatory details as mentioned in below attached screenshot",
+        "Then, select 'Add' to create the ID. After selecting 'Add,' the ID will be created and below attachment will be displayed",
+        "Now the ID has been successfully created and we need to shared the Password 1:1 with the user on their mail ID."
+      ],
+ 
+      "step_assets": {
+        "2": [
+          "/assets/LOS/LOS1.png"
+        ],
+        "3": [
+          "/assets/LOS/LOS2.png"
+        ],
+        "4": [
+          "/assets/LOS/LOS3.png"
+        ],
+         "5": [
+          "/assets/LOS/LOS4.png"
         ]
       },
       "escalation": true
