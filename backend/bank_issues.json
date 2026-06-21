@@ -611,7 +611,7 @@
         "Enter the account number as shown in the screenshot. Fill in From A/c ID and To A/c ID.",
         "Change the SOL ID as required.",
         "Set Period From as the account opening date Then submit.",
-        "After that, Go to the menu option HPR and Do not enter any data; simply click GO.",
+        "After that, Go to the menu option HPR and Do not enter any data, simply click GO.",
         "Mark the checkbox and take a screenshot of the results.",
         "If the account opening date is before 2019, use the CPSP menu option. Initially, always try the HPSP menu option first. If any error occurs or if the bank team reports missing accounts after receiving the statement, use the CPSP option as an alternative.",
         "Enter the account number -->> Set From Date as the opening date retrieved from the gam table and Set To Date as an earlier date and Use the CPSP menu and click GO.",
