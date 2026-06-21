@@ -541,6 +541,43 @@
         ]
       },
       "escalation": true
+    },
+    {
+      "issue_id": "LOS-025",
+      "system": "LOS",
+      "category": "LOS Application",
+      "status_codes": ["LOS-Application"],
+      "issue_title": [
+        "LOS ID Creation",
+        "How to create LOS ID."
+      ],
+      "symptoms": [
+        "It is a simple process of LOS ID Creation as per branch request, Need HOD Approval for LOS ID Creation."
+      ],
+      "root_cause": "The Loan Origination System (LOS) is a comprehensive process used by banks to manage loan applications. When a customer requests a loan, the process is initiated through the LOS portal. Each loan application is assigned a unique LOS ID, which serves as a reference number throughout the loan process. This system tracks the entire journey of the loan, from the initial request to the final sanctioning of the loan.  We need to create LOS ID for the user as per branch request, Need HOD Approval for LOS ID Creation.",
+      "resolution_steps": [
+        "First we need to ask the details for LOS ID Creation if not shared by brach user - Employee Name, Employee Code, E-mail ID, Mobile Number, Branch/Branches, Department and Designation",
+        "Login into LOS Application from your ID and click on User detail as per below attachment.",
+        "go to User Details and Fill all the mandatory details as mentioned in below attached screenshot",
+        "Then, select 'Add' to create the ID. After selecting 'Add,' the ID will be created and below attachment will be displayed",
+        "Now the ID has been successfully created and we need to shared the Password 1:1 with the user on their mail ID."
+      ],
+ 
+      "step_assets": {
+ 
+        "2": [
+          "/assets/LOS/LOS1.png"
+        ],
+        "3": [
+          "/assets/LOS/LOS2.png"
+        ],
+        "4": [
+          "/assets/LOS/LOS3.png",
+          "/assets/LOS/LOS4.png"
+        ]
+      },
+      "escalation": true
     }
+
     
 ]
