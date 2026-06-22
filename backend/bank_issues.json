@@ -731,7 +731,76 @@
 
       },
       "escalation": true
-    }
+    },
 
+    {
+      "issue_id": "AML_FILES_Transfer-027",
+      "system": "Putty-CBS",
+      "category": "AML File Transfer",
+      "status_codes": ["AML File Transfer"],
+      "issue_titles": [
+        "AML File Transfer",
+        "How to transfer AML File using SFTP & Wincp server."
+      ],
+  
+      "symptoms": [
+        "It is a simple process of Transfer AML File as per user request."
+      ],
+      "root_cause": "The purpose of this document is to provide a detailed, step-by-step guide for updating and transferring the MMS file using the Arcon Secure File Transfer (SFTP) & Wincp platform. It ensures that users follow a standardized process for accessing, extracting, updating, and moving AML files securely and accurately.",
+      "resolution_steps": [
+        "This document applies to the personnel involved in the management and handling of AML file transfers.",
+        "First, we have to download the file in our local system, Then we have to move the downloaded file over WinSCP.",
+        "After that we have to login ARCON PAM server 10.36.50.16 and login server 10.36.41.133",
+        "When we have successfully logged into the server then we have to go WinSCP.",
+        "Then we have to select servive.ALM@192.168.54.222 where we have to get TAR file of previous date.",
+        "This TAR file has to be moved to our local system.",
+        "After that we have to move our downloaded file over server.",
+        "Then we have to move file where we have put TAR file.",
+        "Then after, go to the file manager and follow below given path -- D --> Shivalik-->SH_INPUTDATA",
+        "Then extract the TAR file which one you drag previously and Open tar file and do right click go 7-Zip and extract and directly click ok.",
+        "The same has been followed for the second file.",
+        "After extraction of second file open it and copy all.",
+        "And go to the Extracted tar file and replace it and count it should be 92 items.",
+        "Copy it again, move it out of the subfolder, paste it, and then delete the subfolder.",
+        "Once everything is done, reply on that Mail/Teams as per request received."
+      ],
+ 
+      "step_assets": {
+        "3": [
+          "/assets/AML_File/AML1.png"
+        ],
+        "4": [
+          "/assets/AML_File/AML2.png"
+        ],
+        "5": [
+          "/assets/AML_File/AML3.png"
+        ],
+         "6": [
+          "/assets/AML_File/AML4.png"
+        ],
+        "7": [
+          "/assets/AML_File/AML5.png"
+        ],
+        "8": [
+          "/assets/AML_File/AML6.png"
+        ],
+        "10": [
+          "/assets/AML_File/AML7.png"
+        ],
+        "12": [
+          "/assets/AML_File/AML8.png"
+        ],
+        "13": [
+          "/assets/AML_File/AML9.png"
+        ],
+        "14": [
+          "/assets/AML_File/AML10.png"
+        ]
+
+      },
+      "escalation": true
+    }
+    
+    
     
 ]
