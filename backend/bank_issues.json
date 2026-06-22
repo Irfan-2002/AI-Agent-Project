@@ -809,9 +809,9 @@
       "status_codes": ["RTN File Transfer"],
       "issue_titles": [
         "RTN File Transfer",
-        "How to transfer RTN File using SFTP & Wincp server.",
+        "How to transfer RTN File using SFTP server.",
         "NACH File Upload",
-        "APBS File upload"
+        "APBS File Upload"
       ],
   
       "symptoms": [
