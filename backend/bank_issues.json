@@ -815,7 +815,7 @@
       ],
   
       "symptoms": [
-        "It is a simple process of Transfer RTN File to FTP Server as per user request."
+        "It is a simple process of Transfer RTN File to SFTP Server as per user request."
       ],
       "root_cause": "The purpose of this document is to provide a detailed, step-by-step guide for updating and transferring the RTN file using the Arcon Secure File Transfer using SFTP Server. It ensures that users follow a standardized process for accessing, extracting, and moving RTN files securely and accurately.",
       "resolution_steps": [
